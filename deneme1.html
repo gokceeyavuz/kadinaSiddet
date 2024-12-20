@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Sayfası</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .bg {
+            width: 50%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <h2>Kullanıcı Bilgi Formu</h2>
+
+        <form>
+            <div class="form-group row">
+                <label for="ad" class="col-4 col-form-label">Ad</label>
+                <div class="col-8">
+                    <input id="ad" name="ad" type="text" class="form-control" required="required" placeholder="Adınızı girin">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="soyad" class="col-4 col-form-label">Soyad</label>
+                <div class="col-8">
+                    <input id="soyad" name="soyad" type="text" class="form-control" required="required" placeholder="Soyadınızı girin">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="sehir" class="col-4 col-form-label">Şehir</label>
+                <div class="col-8">
+                    <input id="sehir" name="sehir" type="text" class="form-control" required="required" placeholder="Şehrinizi girin">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="tel" class="col-4 col-form-label">Telefon No</label>
+                <div class="col-8">
+                    <input id="tel" name="tel" type="tel" class="form-control" required="required" placeholder="Telefon numaranızı girin">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-8 offset-4">
+                    <button type="submit" class="btn btn-primary">Gönder</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

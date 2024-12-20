@@ -1,0 +1,45 @@
+.navbar {
+    margin-bottom: 20px;
+    background-color: #343a40;
+}
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+    font-weight: 500;
+    padding: 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #800080;
+    background-color: #343a40;
+    border-radius: 5px;
+}
+
+.navbar-nav .nav-link.active {
+    background-color: #ffffff;
+    color: white !important;
+    border-radius: 5px;
+}
+
+.navbar-toggler {
+    border-color: #ffffff;
+}
+
+.navbar-toggler-icon {
+    color: #ffffff;
+}
+
+footer {
+    padding: 20px 0;
+    background-color: #800080;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Diğer stiller */

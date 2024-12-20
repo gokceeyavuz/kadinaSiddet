@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="website icon" href="resim/kadinCinayet.jpeg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+    <style>
+      .kutu2 {
+        background-color: purple;
+        width: 100%;
+        height: 90px;
+
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+      }
+      .icon {
+        display: flex; /* Flexbox kullanımı */
+        align-items: center; /* Dikeyde ortalama */
+        justify-content: center; /* Yatayda ortalama */
+        width: 85px; /* İkon boyutu */
+        height: 90px; /* Konteyner yüksekliği */
+        margin: auto; /* Tüm kenarlardan eşit mesafede ortalar */
+        margin-top: 5;
+      }
+      .bgg {
+        background-color: #d9d9d9;
+        width: 100%;
+        height: 50px;
+        margin-top: 20px;
+      }
+      .btn-light {
+        background-color: #e3e3e2;
+        border: none;
+        color: purple;
+        border-radius: 25px;
+        /* padding: 10px;*/
+        font-size: 1.1rem;
+        /* width: 200px;  Butonun tam genişliğini sağladık */
+      }
+      .fixed-image {
+        width: 62rem; /* Resmin genişliğini konteyner içine sığdır */
+        height: 22rem; /* Oranını koruyarak yüksekliği ayarla */
+        margin-top: 50px; /* Sayfanın üst kısmından uzaklık */
+        align-items: center; /* Dikeyde ortalama */
+        justify-content: center; /* Yatayda ortalama */
+      }
+      .image-container img {
+        max-width: 100%; /* Görsel sütunun genişliğine sığacak şekilde ayarlanır */
+        height: auto; /* Oranları koruyarak yüksekliği ayarlar */
+        border-radius: 10px; /* Görsel köşeleri yuvarlatılır */
+        margin-top: 85px;
+      }
+      .text-container {
+        padding: 20px; /* Yazıya iç boşluk eklenir */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="kutu2">
+      <img src="resim/kadinCinayet.jpeg" alt="icon" class="icon" />
+    </div>
+    <div class="bgg">
+      <nav class="navbar navbar-expand-lg" style="background-color: #e3e3e2">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          style="background-color: rgba(64, 40, 40, 0.258)"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar İçeriği -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <button
+                class="btn btn-light mx-2"
+                onclick="window.location.href='anaSayfa.html'"
+              >
+            <li class="nav-item active">
+              <button class="btn btn-light mx-2" onclick="window.location.href='giris.html'">Giriş Yap</button>
+            </li>
+            <li class="nav-item active">
+              <button class="btn btn-light mx-2">Açıklamalar</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-light mx-2">Hakkımızda</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-light mx-2">AnıtSayaç</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-light mx-2">Şiddet Haritası</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-light mx-4" onclick="window.location.href='siddetForm.html'">
+                Şiddete Uğruyor Musunuz?
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Görsel Kısmı -->
+        <div class="col-md-6 image-container">
+          <img src="resim/152950.jpg" alt="Resim" />
+        </div>
+        <!-- Yazı Kısmı -->
+        <div class="col-md-6 text-container mt-5">
+          <h3>6284 Nedir?</h3>
+          <p>
+            6284 sayılı Kanun, Ailenin Korunması ve Kadına Karşı Şiddetin
+            Önlenmesine Dair Kanun olarak bilinmektedir. Bu kanun, şiddet gören
+            veya şiddet tehdidi altında olan kadınların, çocukların, aile
+            bireylerinin ve tek taraflı ısrarlı takip mağduru olan kişilerin
+            korunmasını ve söz konusu kişilere yönelik şiddetin önlenmesini
+            amaçlamaktadır. Tek Taraflı Israrlı Takip Mağduru, bir kişinin
+            ayrıldığı veya hala birlikte olduğu sevgilisi veya eşi tarafından
+            sürekli olarak takip edilmesi ve izlenmesi durumunu ifade eder.
+            Takip eden kişi, bu davranışıyla karşı tarafı korkutmayı, gözdağı
+            vermeyi ve güvencesiz hissettirmeyi amaçlar. 6284 sayılı Kanun,
+            şiddetten etkilenen kişileri korumak ve şiddet uygulayan kişilere
+            karşı önlemler almak için etkili ve önemli imkanlar sunar.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h3>6284 Sayılı Kanun’un Kapsamı</h3>
+      <p>
+        6284 sayılı Ailenin Korunması ve Kadına Karşı Şiddetin Önlenmesine Dair
+        Kanun, genellikle 6284 sayılı Kanun olarak bilinir ve 20/03/2012
+        tarihinde yürürlüğe girmiştir. Bu kanun, ailenin korunması ve kadına
+        karşı şiddetle etkili bir şekilde mücadele edilmesi amacıyla, uygulamaya
+        yönelik somut mekanizmalar kurarak, iç hukuktaki en etkili ve kapsamlı
+        metinlerden biridir. 6284 sayılı Kanun’un sağladığı en önemli hukuki
+        araç, başvuru veya ihbar yoluyla veya re’sen işlem başlatılarak, belge
+        veya delil şartı olmaksızın, şiddet mağduru lehine koruyucu tedbir
+        kararı verilmesine olanak tanımasıdır. Bu çerçevede, 6284 sayılı Kanun’a
+        istinaden talep edilebilecek koruyucu ve önleyici tedbirlerden bazıları
+        şunlardır: Hayati tehlikenin varlığı halinde ilgilinin geçici koruma
+        altına alınması, Hukuki, mesleki, psikolojik ve sosyal bakımdan
+        rehberlik ve danışmanlık hizmeti verilmesi, Barınma yeri temin edilmesi,
+        İlgilinin iş yerinin değiştirilmesi, Başvuru sahibinin evli olması
+        durumunda, ortak konuttan ayrı yerleşim yeri belirlenmesi, Geçici maddi
+        yardımda bulunulması, Hayati tehlike halinde Tanık Koruma Kanunu
+        çerçevesinde kimlik ve ilgili diğer bilgi ve belgelerin değiştirilmesi,
+        Failin şiddet tehdidi, aşağılama, hakaret veya küçük düşürmeyi içeren
+        söz ve davranışlarda bulunmamasına karar verilmesi, Kreş olanağı temin
+        edilmesi, Failin, korunan kişi/kişilere, söz konusu kişilerin
+        bulundukları konuta, okula ve iş yerine yaklaşmaması, Çocuklarla ilgili
+        geçmişte verilmiş bir kişisel ilişki kurma kararı varsa, kişisel
+        ilişkinin refakatçi eşliğinde yapılması, kişisel ilişkin
+        sınırlandırılması veya tamamen kaldırılması, 4721 sayılı yürürlükteki
+        Türk Medeni Kanunu’nda düzenlenen şartları varlığı halinde ve korunan
+        kişinin istemi üzerine, tapu kütüğüne aile konutu şerhi konulması,
+        Failin, koruma altına alınmış kişinin şahsi eşyalarına ve ev eşyalarına
+        zarar vermemesi, Failin, koruma altına alınmış kişiyi iletişim araçları
+        veya benzer şekillerde rahatsız etmemesi, Şiddette bulunan/failin, ortak
+        konuttan veya bulunduğu yerden ivedilikle uzaklaştırılması ve ortak
+        konutun korunan kişiye tahsis edilmesi, Failin, şiddette bulunmamış olsa
+        dahi mağdurun yakınlarına, tanıklarına ve çocuklarına yaklaşmaması,
+        Failin, taşıması veya bulundurması hukuken izin verilen silahları
+        kolluğa teslim etmesi, Failin, koruma altına alınan kişilerin bulunduğu
+        yerlerde uyuşturucu veya uyarıcı madde ve alkol kullanmaması veya bu
+        maddelerin etkisindeyken, korunan kişilere ve bulundukları yerlere
+        yaklaşmaması, bağımlı ise hastaneye yatmak da dahil olmak üzere muayene
+        ve tedavisinin sağlanması.6284 sayılı Kanun’a istinaden hükmedilebilecek
+        tedbirlerin sınırlı sayıda belirtilmemesi önemlidir. Bu nedenle,
+        şiddetin engellenmesi ve şiddet mağdurlarının korunmasına yönelik umulan
+        tedbirlere hükmedilebilmesi adına hakimlerin takdir yetkisi
+        bulunmaktadır. Ayrıca, verilen kararlara uymamanın fail aleyhine zorlama
+        hapsine sebep olabileceği de 6284 sayılı Kanun’da düzenlenmiştir.
+      </p>
+      <h3>6284 Sayılı Kanun’dan Hangi Durumlarda Yararlanılabilir?</h3>
+      <p>
+        6284 sayılı Kanun’a göre, şiddet; fiziksel, psikolojik, cinsel veya
+        ekonomik bakımdan zarar görülmesi veya acı çekilmesi ile neticelenen ya
+        da neticelenmesi muhtemel hareketler olarak tanımlanmıştır. Bu nedenle,
+        şiddeti sadece fiziksel saldırı olarak değerlendirmemek önemlidir. 6284
+        sayılı Kanun’a göre, şiddet kapsamında değerlendirilebilecek temel
+        davranışlar şunlardır: Hakaret etmek, Birilerinin yanında küçük
+        düşürmek, İstenmeyen zamanlarda ve biçimlerde cinsel ilişkiye zorlamak,
+        İhtiyaçlar için yeterli maddi yardımda bulunmamak, Sürekli nereye kaç
+        lira harcandığını sormak, Kimlerle arkadaş olunduğuna karışmak,
+        Aşağılamak, Öldürmekle, yaralamakla, sakat bırakmakla tehdit etmek,
+        Komşularla, arkadaşlarla, akrabalarla görüşülmesine izin vermemek,
+        Kazanılan paraya el koymak, Israrla telefonla aramak, Takip etmek.
+      </p>
+      <br />
+      <p>
+        Sıralanan davranışlar 6284 sayılı Kanun’a göre şiddet kapsamında kabul
+        edilir. Bu nedenle, bu tür davranışlara maruz kalınması halinde, Kanun
+        tarafından düzenlenen tedbirlerden yararlanılabilecektir. Ayrıca, şiddet
+        mağdurunun yanı sıra, çocuğu, annesi, kız kardeşi veya yakınındaki
+        kişiler de şiddet sebebiyle zarar görebilir. Kanun, bu kişileri de
+        hukuki koruma altına almıştır.
+      </p>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

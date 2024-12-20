@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" href="kad-na-iddetplatformu/resim/kadinCinayet.jpeg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <title>Şiddete Uğruyor Musunuz?</title>
+    <style>
+          body, html {
+            height: 100%;
+            margin: 0;
+            background-color: #F4F3F4;
+        }
+       
+        .bg {
+            /* Full height */
+            /* Center and scale the image nicely */
+            background-color: #ffff;
+            
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 21cm;
+            padding: 2cm;
+           margin: auto;
+            border: 1px #D3D3D3 solid;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            -webkit-print-color-adjust: exact !important;   /* Chrome, Safari, Edge */
+            color-adjust: exact !important;                 /*Firefox*/
+
+        }
+        .kutu2 {
+        background-color: purple;
+        width: 100%;
+        height: 90px;
+       
+        
+      }
+      .icon {
+        display: flex; /* Flexbox kullanımı */
+        align-items: center; /* Dikeyde ortalama */
+        justify-content: center; /* Yatayda ortalama */
+        width: 85px; /* İkon boyutu */
+        height: 90px; /* Konteyner yüksekliği */
+        margin: auto; /* Tüm kenarlardan eşit mesafede ortalar */
+        margin-top: 5px;
+      }
+      .btn-primary {
+        background-color: #800080;
+        border: none;
+        border-radius: 25px;
+        padding: 0.75rem;
+        font-size: 1rem;
+      }
+      .btn-primary:hover {
+        background-color: #eccdec;
+      }
+      footer {
+    padding: 20px 0;
+    background-color: #800080;
+    color: #ffffff;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div class="kutu2">
+      
+        <img src="kad-na-iddetplatformu/resim/kadinCinayet.jpeg" alt="icon" class="icon" 
+        />
+      </div>
+      <br>
+        <br>
+        <br>
+         <div class="container  ">
+    <div class="bg" >
+        <center> <h2 style="color:rgb(219, 33, 33)"> Şiddete Uğruyor Musunuz?</h2> </center>
+        <br>
+        <br>
+        <form >
+            <div class="form-group row ">
+                <label for="Musteri" class="col-4 col-form-label">İsim:</label> 
+                <div class="col-8">
+                    <input id="text" name="kullanici" type="text" aria-describedby="MusteriHelpBlock" placeholder="İsim giriniz" required="required" class="form-control"> 
+                        
+                </div>
+            </div>
+            <div class="form-group row my-4">
+                <label for="Musteri" class="col-4 col-form-label">Soyisim:</label> 
+                <div class="col-8">
+                    <input id="text" name="kullanici" type="text" aria-describedby="MusteriHelpBlock" placeholder=" Soyisim giriniz" required="required" class="form-control"> 
+                        
+                </div>
+
+            
+            
+            </div>
+             <div class="form-group row my-4">
+                <label for="text" class="col-4 col-form-label">Başvuru Tarihi:</label> 
+                <div class="col-8">
+                    <input type="date" name="date" ></input>
+                    
+                </div>
+            </div>
+            <div class="form-group row my-4">
+              <label for="kullanici" class="col-4 col-form-label">Email Adres:</label> 
+              <div class="col-8">
+                <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+              /> 
+                      
+              </div>
+    
+            
+            </div>
+            <div class="form-group row my-4">
+                <label for="citySelect" class="col-4 col-form-label" >Şehir:</label>
+                <div class="col-8">
+                <select class="form-control" id="citySelect">
+                    <option value="">Şehir Seçin</option>
+                </select>
+            </div>
+              </div>
+              <script>
+                // JSON verisini almak için fetch kullanıyoruz
+                fetch('cities.json')  // JSON dosyasının bulunduğu yer
+                  .then(response => response.json())  // JSON olarak parse ediyoruz
+                  .then(data => {
+                    const selectElement = document.getElementById('citySelect');
+              
+                    // Şehirleri select'e ekliyoruz
+                    data.cities.forEach(city => {
+                      const option = document.createElement('option');
+                      option.value = city;
+                      option.textContent = city;
+                      selectElement.appendChild(option);
+                    });
+                  })
+                  .catch(error => {
+                    console.error("Bir hata oluştu:", error);
+                  });
+              </script>
+              
+            <div class="form-group my-4">
+                <label for="exampleFormControlTextarea1">Şikayet Metni</label>
+                <textarea name="aciklama" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+    
+    
+            <div class="form-group row">
+                    <button style="margin-bottom: 5px;"
+                    type="submit"
+                    class="btn btn-primary w-100"  onclick="window.location.href='geriBildirim.html'"> 
+                    <i>Kayıt Ol</i>
+                  </button>
+                 
+                  
+                  <button
+                  type="reset"
+                  class="btn btn-primary w-100"> 
+                  <i>Temizle</i>
+                </button>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</div>
+    <br>
+        <br>
+        <footer class="footer">
+            <p>&copy; 2024 Şiddete Dur de. Tüm hakları saklıdır.</p>
+        </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>
