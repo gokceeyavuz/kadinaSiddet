@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="website icon" href="kad-na-iddetplatformu/resim/kadinCinayet.jpeg" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
@@ -11,6 +10,7 @@
       crossorigin="anonymous"
     />
     <title>İstanbul Sözleşmesi Nedir?</title>
+    <link rel="web site icon" href="resim/kadinCinayet.jpeg" />
     <style>
       .kutu2 {
         background-color: purple;
@@ -20,6 +20,12 @@
         left: 0;
         margin: 0;
         padding: 0;
+      }
+      footer {
+        padding: 20px 0;
+        background-color: #800080;
+        color: #ffffff;
+        text-align: center;
       }
       .icon {
         display: flex; /* Flexbox kullanımı */
@@ -69,7 +75,7 @@
   </head>
   <body>
     <div class="kutu2">
-      <img src="kad-na-iddetplatformu/resim/kadinCinayet.jpeg" alt="icon" class="icon" />
+      <img src="resim/kadinCinayet.jpeg" alt="icon" class="icon" />
     </div>
     <div class="bgg">
       <nav class="navbar navbar-expand-lg" style="background-color: #e3e3e2">
@@ -97,23 +103,55 @@
                 class="btn btn-light mx-2"
                 onclick="window.location.href='anaSayfa.html'"
               >
+                AnaSayfa
+              </button>
+            </li>
+
             <li class="nav-item active">
-              <button class="btn btn-light mx-2">Giriş Yap</button>
+              <button
+                class="btn btn-light mx-2"
+                onclick="window.location.href='giris.html'"
+              >
+                Giriş Yap
+              </button>
             </li>
             <li class="nav-item active">
-              <button class="btn btn-light mx-2">Açıklamalar</button>
+              <button
+                class="btn btn-light mx-2"
+                onclick="window.location.href='aciklamalar.html'"
+              >
+                Açıklamalar
+              </button>
             </li>
             <li class="nav-item">
-              <button class="btn btn-light mx-2">Hakkımızda</button>
+              <button
+                class="btn btn-light mx-2"
+                onclick="window.location.href='hakkimizda.html'"
+              >
+                Hakkımızda
+              </button>
             </li>
             <li class="nav-item">
-              <button class="btn btn-light mx-2">AnıtSayaç</button>
+              <button
+                class="btn btn-light mx-2"
+                onclick="window.location.href='anit-sayac.html'"
+              >
+                AnıtSayaç
+              </button>
             </li>
             <li class="nav-item">
-              <button class="btn btn-light mx-2">Şiddet Haritası</button>
+              <button
+                class="btn btn-light mx-2"
+                onclick="window.location.href='siddetHar2.html'"
+              >
+                Şiddet Haritası
+              </button>
             </li>
             <li class="nav-item">
-              <button class="btn btn-light mx-5">
+              <button
+                class="btn btn-light mx-5"
+                onclick="window.location.href='formOlustur.html'"
+              >
                 Şiddete Uğruyor Musunuz?
               </button>
             </li>
@@ -125,7 +163,7 @@
       <div class="row align-items-center">
         <!-- Görsel Kısmı -->
         <div class="col-md-6 image-container mb-2">
-          <img src="kad-na-iddetplatformu/resim/istanbulSozlesme.png" alt="Resim" />
+          <img src="resim/istanbulSozlesme.png" alt="Resim" />
         </div>
         <!-- Yazı Kısmı -->
         <div class="col-md-6 text-container mx-n5">
@@ -246,6 +284,11 @@
         tarihinde sözleşmeden resmen çekilmiş oldu.
       </p>
     </div>
+    <br />
+    <br />
+    <footer class="footer">
+      <p>&copy; 2024 Şiddete Dur de. Tüm hakları saklıdır.</p>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

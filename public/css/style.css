@@ -1,0 +1,108 @@
+.navbar {
+  margin-bottom: 20px;
+  background-color: purple;
+}
+
+/*.navbar-brand {
+    color: #ffffff;
+    font-weight: bold;
+  }*/
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  font-weight: 500;
+  padding: 15px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #800080;
+  background-color: #343a40;
+  border-radius: 5px;
+}
+
+.navbar-nav .nav-link.active {
+  background-color: #ffffff;
+  color: white !important;
+  border-radius: 5px;
+}
+
+.navbar-toggler {
+  border-color: #ffffff;
+}
+
+.navbar-toggler-icon {
+  color: #ffffff;
+}
+
+footer {
+  padding: 20px 0;
+  background-color: #800080;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* ! ANIT SAYAC */
+#anit-sayac .card {
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+#anit-sayac .card img {
+  height: 200px;
+  object-fit: cover;
+}
+#anit-sayac .card-body {
+  padding: 1rem;
+}
+#anit-sayac .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+#anit-sayac .card-text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+#anit-sayac .card {
+  transition: transform 0.2s ease-in-out;
+}
+#anit-sayac .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+/* Sayaç Stilleri */
+#anit-sayac-container {
+  margin-top: 2rem;
+}
+
+#sayac-container {
+  padding: 20px;
+  border: 2px solid #800080;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  display: inline-block;
+}
+
+#sayac-deger {
+  font-size: 6rem;
+  color: #800080;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Anıt Listesi Stilleri */
+#anitlar-section .card img {
+  height: 150px;
+  object-fit: cover;
+}
+/* Kartları düzenle */
+#anitlar-section .card {
+  text-align: center; /* İçeriği ortala */
+  display: flex; /* Flexbox kullan */
+  flex-direction: column; /* Dikey düzen */
+  justify-content: space-between;
+}
+
+/* Butonun stilini düzenle */
+#anitlar-section .card .btn {
+  margin-top: 10px; /* Buton ile metin arasında boşluk */
+}

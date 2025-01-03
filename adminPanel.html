@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+    <title>Admin Paneli</title>
+    <style>
+      .sidebar {
+        height: 100vh;
+        width: 250px;
+        background-color: #800080;
+        color: white;
+        position: fixed;
+        padding-top: 20px;
+      }
+      .sidebar a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 10px 15px;
+        margin: 5px 0;
+        border-radius: 5px;
+      }
+      .sidebar a:hover {
+        background-color: #eccdec;
+        color: #800080;
+      }
+      .content {
+        margin-left: 260px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h3 class="text-center">Admin Paneli</h3>
+      <a href="#kullanici">Kullanıcı Yönetimi</a>
+      <a href="#sikayet">Şikayet Yönetimi</a>
+      <a href="#istatistik">İstatistikler</a>
+    </div>
+
+    <div class="content">
+      <section id="kullanici">
+        <h2>Kullanıcı Yönetimi</h2>
+        <table class="table table-bordered" id="userTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Ad Soyad</th>
+              <th>Email</th>
+              <th>Rol</th>
+              <th>İşlem</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Gökçe Yavuz</td>
+              <td>admin@example.com</td>
+              <td>Admin</td>
+              <td>
+                <button
+                  class="btn btn-sm btn-danger"
+                  onclick="deleteUser(this)"
+                >
+                  Sil
+                </button>
+                <button class="btn btn-sm btn-warning" onclick="editUser(this)">
+                  Düzenle
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Mehmet Said Hüseyinoğlu</td>
+              <td>admin@example.com</td>
+              <td>Kullanıcı</td>
+              <td>
+                <button
+                  class="btn btn-sm btn-danger"
+                  onclick="deleteUser(this)"
+                >
+                  Sil
+                </button>
+                <button class="btn btn-sm btn-warning" onclick="editUser(this)">
+                  Düzenle
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Begüm Aksüt</td>
+              <td>admin@example.com</td>
+              <td>Admin</td>
+              <td>
+                <button
+                  class="btn btn-sm btn-danger"
+                  onclick="deleteUser(this)"
+                >
+                  Sil
+                </button>
+                <button class="btn btn-sm btn-warning" onclick="editUser(this)">
+                  Düzenle
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Murat Yusuf Akınay</td>
+              <td>admin@example.com</td>
+              <td>Admin</td>
+              <td>
+                <button
+                  class="btn btn-sm btn-danger"
+                  onclick="deleteUser(this)"
+                >
+                  Sil
+                </button>
+                <button class="btn btn-sm btn-warning" onclick="editUser(this)">
+                  Düzenle
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Düzenleme Modal -->
+      <div
+        class="modal fade"
+        id="editModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="editModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editModalLabel">
+                Kullanıcıyı Düzenle
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="editForm">
+                <div class="form-group">
+                  <label for="editId">ID</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editId"
+                    readonly
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="editName">Ad Soyad</label>
+                  <input type="text" class="form-control" id="editName" />
+                </div>
+                <div class="form-group">
+                  <label for="editEmail">Email</label>
+                  <input type="email" class="form-control" id="editEmail" />
+                </div>
+                <div class="form-group">
+                  <label for="editRole">Rol</label>
+                  <select class="form-control" id="editRole">
+                    <option>Admin</option>
+                    <option>Kullanıcı</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Kapat
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="saveChanges()"
+              >
+                Kaydet
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // Kullanıcı Silme
+        function deleteUser(button) {
+          if (confirm("Bu kullanıcıyı silmek istediğinize emin misiniz?")) {
+            const row = button.parentElement.parentElement;
+            row.remove();
+          }
+        }
+
+        // Kullanıcı Düzenleme
+        function editUser(button) {
+          const row = button.parentElement.parentElement;
+          const cells = row.querySelectorAll("td");
+
+          document.getElementById("editId").value = cells[0].textContent.trim();
+          document.getElementById("editName").value =
+            cells[1].textContent.trim();
+          document.getElementById("editEmail").value =
+            cells[2].textContent.trim();
+          document.getElementById("editRole").value =
+            cells[3].textContent.trim();
+
+          // Modalı aç
+          $("#editModal").modal("show");
+        }
+
+        // Değişiklikleri Kaydet
+        function saveChanges() {
+          const id = document.getElementById("editId").value.trim();
+          const name = document.getElementById("editName").value.trim();
+          const email = document.getElementById("editEmail").value.trim();
+          const role = document.getElementById("editRole").value.trim();
+
+          // Tabloyu güncelle
+          const rows = document.querySelectorAll("#userTable tbody tr");
+          rows.forEach((row) => {
+            if (row.cells[0].textContent.trim() === id) {
+              row.cells[1].textContent = name;
+              row.cells[2].textContent = email;
+              row.cells[3].textContent = role;
+            }
+          });
+
+          // Modalı kapat
+          $("#editModal").modal("hide");
+        }
+      </script>
+      <section id="sikayet">
+        <h2>Şikayet Yönetimi</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>TC Kimlik No</th>
+              <th>İsim</th>
+              <th>Email</th>
+              <th>Şehir</th>
+              <th>Şikayet</th>
+              <th>Tarih</th>
+              <th>Durum</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody id="complaintsTable">
+            <!-- Şikayetler buraya dinamik olarak eklenecek -->
+          </tbody>
+        </table>
+      </section>
+      <section id="istatistik">
+        <h2>İstatistikler</h2>
+        <p>Toplam Kullanıcı: 50</p>
+        <p>Gelen Şikayetler: 15</p>
+        <p>Çözülen Şikayetler: 10</p>
+      </section>
+    </div>
+    <script>
+      function loadComplaints() {
+        const complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+        const complaintsTable = document.getElementById("complaintsTable");
+        complaintsTable.innerHTML = "";
+
+        complaints.forEach((complaint, index) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+      <td>${complaint.tcNumber}</td>
+      <td>${complaint.name}</td>
+      <td>${complaint.email}</td>
+      <td>${complaint.city}</td>
+      <td>${complaint.complaintText}</td>
+      <td>${new Date(complaint.timestamp).toLocaleDateString()}</td>
+      <td>
+        <select class="form-control form-control-sm" onchange="updateStatus(${index}, this.value)">
+          <option value="Beklemede" ${
+            complaint.status === "Beklemede" ? "selected" : ""
+          }>Beklemede</option>
+          <option value="İnceleniyor" ${
+            complaint.status === "İnceleniyor" ? "selected" : ""
+          }>İnceleniyor</option>
+          <option value="Çözüldü" ${
+            complaint.status === "Çözüldü" ? "selected" : ""
+          }>Çözüldü</option>
+        </select>
+      </td>
+      <td>
+        <button class="btn btn-danger btn-sm" onclick="deleteComplaint(${index})">Sil</button>
+      </td>
+    `;
+          complaintsTable.appendChild(row);
+        });
+      }
+
+      function updateStatus(index, newStatus) {
+        const complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+        complaints[index].status = newStatus;
+        localStorage.setItem("complaints", JSON.stringify(complaints));
+      }
+
+      function deleteComplaint(index) {
+        if (confirm("Bu şikayeti silmek istediğinize emin misiniz?")) {
+          const complaints =
+            JSON.parse(localStorage.getItem("complaints")) || [];
+          complaints.splice(index, 1);
+          localStorage.setItem("complaints", JSON.stringify(complaints));
+          loadComplaints();
+        }
+      }
+
+      // Sayfa yüklendiğinde şikayetleri yükle
+      document.addEventListener("DOMContentLoaded", loadComplaints);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
