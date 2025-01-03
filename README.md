@@ -1,2 +1,2 @@
 # kadinaSiddet
- Kadına şiddet platformu
+ Kadına  karşı yapılan şiddete farkındalık oluşturmak için yapılmış platform
